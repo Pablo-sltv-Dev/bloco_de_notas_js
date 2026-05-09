@@ -1,4 +1,3 @@
-````md
 # 📝 Bloco de Notas em JavaScript
 
 Projeto simples de bloco de notas desenvolvido com **HTML**, **CSS** e **JavaScript**.
@@ -86,5 +85,4 @@ Neste projeto foram praticados conceitos como:
 
 Feito por Pablo 🚀
 
-```
-```
+
