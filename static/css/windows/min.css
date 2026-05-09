@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media screen and (min-width:500px) {
+    body{
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    header{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    header > button{
+        width: 10%;
+        height: 50%;
+        text-align:center;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+    main{
+        width: 100%;
+        height: 60%;
+    /* overflow: scroll; */
+}
+
+#blc_nts{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left:2px ;
+    padding-right: 2px;
+
+}
+
+#blc_nts > .container{
+    background-color: rgb(28, 28, 28);
+
+    width: 100%;
+    max-height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius:  15px;
+}
+}

@@ -1,0 +1,19 @@
+@import url("./windows/max.css");
+@import url("./windows/min.css");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* header{ border: 1px solid red;} */
+
+/* main{ border: 1px solid white; } */
+
+/* #blc_nts{ border: 1px solid red; } */

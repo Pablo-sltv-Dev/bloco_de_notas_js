@@ -1,0 +1,7 @@
+Criar um bloco de notas
+
+titulo
+bloco de notas
+
+
+agr vamos que conseguimos salvar a nota no banco de edição, agr vamos fazer a opção e excluir ela ou de editar o conteudo dela
