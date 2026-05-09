@@ -28,10 +28,26 @@ O usuário pode adicionar notas e selecionar qual deseja remover.
 
 ```bash
 📁 bloco-de-notas
- ├── index.html
- ├── style.css
- ├── script.js
- └── README.md
+├── index.html
+├── objetivo.txt
+├── README.md
+├── static
+│   ├── css
+│   │   ├── style.css
+│   │   └── windows
+│   │       ├── max.css
+│   │       └── min.css
+│   ├── js
+│   │   ├── script_02.js
+│   │   └── script.js
+│   └── src
+│       ├── bnc.js
+│       ├── criacoes.js
+│       └── notes.js
+└── templates
+    └── adc.html
+
+
 ```
 
 ---
