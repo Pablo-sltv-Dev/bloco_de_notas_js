@@ -1,6 +1,6 @@
-import { carregar_dados, retirada } from "../src/bnc.js";
 import { create_tag_div, create_tag_h3, create_tag_p, create_tag_section } from "../src/criacoes.js";
-import { vz_notes, vz_notes_form } from "../src/notes.js";
+import { vz_notes, vz_notes_form, retirada } from "../src/notes.js";
+
 
 
 const bto_adc = document.getElementById("adc");

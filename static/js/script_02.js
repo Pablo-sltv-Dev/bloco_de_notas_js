@@ -1,9 +1,13 @@
-import { salvar_dados, carregar_dados } from "../src/bnc.js";
+import { Bnc } from "../src/bnc.js";
 const formulario = document.getElementById("frmlrio");
 
     formulario.addEventListener("submit", (event)=>{
         event.preventDefault();
-        const dados = carregar_dados();
+        // const dados = carregar_dados(); // original
+
+        const dados = new Bnc().carregar_dados();
+        // dados.carregar_dados()
+
         // console.log(dados);
         // localStorage.clear()
       
@@ -16,18 +20,21 @@ const formulario = document.getElementById("frmlrio");
       
         // console.log("titulo: ",nota.titulo, "\nDescrição: ", nota.descricao);
 
-        dados.push(nota)
         // console.log(dados)
+        // dados.carregar_dados()
+        // console.log(dados)
+
+        dados.push(nota)
+        
         // let e = []
-        const s = salvar_dados(dados);        
+       const s = new Bnc().salvar_dados(dados);        
         if (s === true){
             // console.log("deu certo\n", dados)
             window.location.href = "../../index.html";
         }else{
             alert("erro")
         }
-        console.log(dados[0])
-        
+        formulario.reset()
     })
 
 
