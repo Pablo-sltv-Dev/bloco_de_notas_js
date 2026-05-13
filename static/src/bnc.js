@@ -1,5 +1,13 @@
 
 export class Bnc {
+    constructor(){
+        if (localStorage.getItem("notas") !== null){
+
+            return
+        }else{
+        this.salvar_dados([])
+        }
+    }
 
     carregar_dados(){
     const dados = JSON.parse(localStorage.getItem("notas"))
@@ -7,7 +15,6 @@ export class Bnc {
 }
     salvar_dados(dados){
     localStorage.clear()
-    console.log("aqui foi")
     localStorage.setItem("notas", JSON.stringify(dados))
     return true
         

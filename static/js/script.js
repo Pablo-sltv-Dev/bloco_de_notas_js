@@ -2,7 +2,6 @@ import { create_tag_div, create_tag_h3, create_tag_p, create_tag_section } from 
 import { vz_notes, vz_notes_form, retirada } from "../src/notes.js";
 
 
-
 const bto_adc = document.getElementById("adc");
 const bto_slct = document.getElementById("slct_nt");
 
