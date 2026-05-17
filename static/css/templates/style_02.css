@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(28, 28, 28);
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body > form{
+    border: 1px solid white;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#ttl_nt::placeholder{
+    color: white;
+    /* border: 1px solid white; */
+    width: 100%;
+    /* height: 100%; */
+}
+form > #ttl_nt{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+    
+}
+form > textarea{
+    width: 100%;
+    height: 80%;
+    background-color: transparent;
+}
+
+form > #g535{
+    width: 20%;
+}
