@@ -60,6 +60,27 @@ export function create_tag_input(vl){
     return box
 }
 
+export function create_tag_textarea(ide, txt){
+    const tag = document.createElement("textarea")
+    tag.ide = String(ide)
+    tag.placeholder = "exemplo"
+    if (txt !== undefined){
+        tag.value = txt
+    } 
+    return tag
+}
+
+export function create_tag_input_txt(ide, txt){
+    const tag = document.createElement("input");
+    tag.type = "text";
+    tag.ide = String(ide)
+    tag.placeholder = "exemplo"
+    if (txt !== undefined){
+        tag.value = txt
+    } 
+    return tag
+}
+
 export function create_tag_label(dados){
     const label = document.createElement("label")
     // const info = create_tag_input(dados)
@@ -69,9 +90,13 @@ export function create_tag_label(dados){
 
     return label
 }
-export function create_tag_input_s(){
+export function create_tag_input_button(id_ ,txt){
     const button = document.createElement("input")
     button.type="submit";
-    button.value = "enviar"
+    if(id_ !== undefined){
+        button.id = String(id_)
+
+    }
+    button.value = String(txt);
     return button;
 }

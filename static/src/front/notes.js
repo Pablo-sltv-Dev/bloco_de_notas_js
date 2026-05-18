@@ -1,5 +1,5 @@
-import { create_tag_div, create_tag_h3, create_tag_p, create_tag_section, create_tag_form, create_tag_input, create_tag_label, create_tag_input_s } from "./criacoes.js";
-import { Bnc } from "./bnc.js";
+import { create_tag_div, create_tag_h3, create_tag_p, create_tag_section, create_tag_form, create_tag_input, create_tag_label, create_tag_input_button } from "./criacoes.js";
+import { Bnc } from "../back/bnc.js";
 
 
 
@@ -41,7 +41,8 @@ export function vz_notes_form(){
 
        
     }
-    form.appendChild(create_tag_input_s())
+    form.appendChild(create_tag_input_button("w3646", "excluir"))
+    form.appendChild(create_tag_input_button("w243r", "editar"))
     section.appendChild(form)
     return section
 }
@@ -72,3 +73,20 @@ export function retirada(esse){
     }
    
 }
+
+export function edit(dados){
+    const editar = JSON.parse(dados);
+    sessionStorage.setItem("nt_edit", JSON.stringify(editar))
+    return "ok"
+}
+
+export class Edicao{
+    #dados = JSON.parse(sessionStorage.getItem("nt_edit"))
+    carregar_titulo(){
+        return this.#dados.titulo
+    }
+    carregar_texto(){
+        return this.#dados.descricao
+    }
+}
+

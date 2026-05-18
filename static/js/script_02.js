@@ -1,29 +1,32 @@
-import { Bnc } from "../src/bnc.js";
+import { Bnc, Note } from "../src/back/bnc.js";
 const formulario = document.getElementById("frmlrio");
-let dta = new Date
-    formulario.addEventListener("submit", (event)=>{
+
+
+
+const bto222 = document.getElementById("r5t3")
+
+bto222.addEventListener("click", ()=>{
+    formulario.reset()
+
+})
+
+formulario.addEventListener("submit", (event)=>{
         event.preventDefault();
-  
 
         const dados = new Bnc().carregar_dados();
     
       
         
-        const nota = {
-            titulo : document.getElementById("ttl_nt").value,
-            descricao : document.getElementById("desc_nt").value,
-            // adicionar Data
-        }
-       
+        const nota = new Note(document.getElementById("ttl_nt").value, document.getElementById("desc_nt").value)
       
-        
+        // console.log(nota)
 
-        dados.push(nota)
+        dados.push(nota.note_completed())
         
-        // let e = []
+        // console.log(dados)
+        let e = []
        const s = new Bnc().salvar_dados(dados);        
         if (s === true){
-            // console.log("deu certo\n", dados)
             window.location.href = "../../index.html";
         }else{
             alert("erro")
