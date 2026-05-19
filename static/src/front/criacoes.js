@@ -46,16 +46,11 @@ export function create_tag_form(ide){
 
 }
 
-export function create_tag_input(vl){
+export function create_tag_input_check(ide,vl){
     const box = document.createElement("input")
     box.type="checkbox";
     box.name = "opcoes";
-    box.id = vl.titulo;
-    box.setAttribute("type", "checkbox");
-    box.setAttribute("id", vl.titulo);
-    // box.setAttribute("name", vl.titulo);
-    // box.setAttribute("value", vl)
-    // console.log(vl)
+    box.id = String(ide);
     box.value = JSON.stringify(vl)
     return box
 }
@@ -83,8 +78,6 @@ export function create_tag_input_txt(ide, txt){
 
 export function create_tag_label(dados){
     const label = document.createElement("label")
-    // const info = create_tag_input(dados)
-    // label.appendChild(info)
     label.appendChild(create_tag_h3(dados.titulo))
     label.appendChild(create_tag_p(dados.descricao))
 
@@ -103,4 +96,13 @@ export function create_tag_input_button(id_ ,txt, activated){
     }
 
     return button;
+}
+
+
+export function verification(dados){
+    for (let checkbox of dados){
+        if (checkbox.checked){
+            return { vl_ide: checkbox.id, vlr: checkbox.value}
+        }
+    }
 }

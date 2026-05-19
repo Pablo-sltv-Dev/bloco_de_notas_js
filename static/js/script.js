@@ -1,5 +1,5 @@
 import { Bnc } from "../src/back/bnc.js";
-import { create_tag_div, create_tag_h3, create_tag_p, create_tag_section } from "../src/front/criacoes.js";
+import { create_tag_div, create_tag_h3, create_tag_p, create_tag_section, verification } from "../src/front/criacoes.js";
 import { vz_notes, vz_notes_form, retirada, edit } from "../src/front/notes.js";
 
 
@@ -20,6 +20,11 @@ mn.appendChild(notes)
 bto_slct.addEventListener("click", ()=>{ //02 
     mn.removeChild(notes)
     bto_adc.disabled = true
+
+    
+
+//______
+
     setTimeout(()=>{
         const ot = vz_notes_form()
         mn.appendChild(ot)
@@ -29,24 +34,33 @@ bto_slct.addEventListener("click", ()=>{ //02
         const bto_edt = document.getElementById("w243r");
         const bto_rmv = document.getElementById("w3646");
 
-        // const bto_nvo = document.getElementById("nt_excl");
 
-        // console.log(bto_nvo)
+
+        
+
+    
+// _______________________________________________
 
         bto_edt.addEventListener("click", ()=>{
             form_nt.addEventListener("submit", (event)=>{
                 event.preventDefault()
 
-                const dds = new FormData(form_nt);
-                const selecionado = dds.get("opcoes")
+                const checkboxes = document.getElementsByName("opcoes")
+                // console.log(checkboxes.length)
+                
+                const vl_fl = verification(checkboxes)
 
-                console.log(selecionado)
-               const tdf = edit(selecionado)
+
+               const tdf = edit(vl_fl)
                 
                 return window.location.href = "../../templates/edit.html"
 
             })
         })
+
+// ________________________________________________
+
+
         bto_rmv.addEventListener("click", (event)=>{
             form_nt.addEventListener("submit", (event)=>{
                 event.preventDefault()

@@ -23,6 +23,32 @@ export class Bnc {
     return true
     }
 
+    remove_data(indi){
+        console.log(indi)
+
+        const dds = this.carregar_dados()
+        
+        const nv_dds = dds.filter( x=> dds.indexOf(x) != indi)
+
+
+        // console.log(nv_dds)
+        return this.salvar_dados(nv_dds)
+    }
+
+    save_note_edited(note){
+        // console.log(note)
+        const dados_antigos = this.carregar_dados()
+
+
+        dados_antigos.push(note)
+
+
+        console.log(dados_antigos)
+        const nvs_dados = this.salvar_dados(dados_antigos)
+
+        return true
+    }
+
 
 }
 

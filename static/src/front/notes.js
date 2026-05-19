@@ -1,4 +1,4 @@
-import { create_tag_div, create_tag_h3, create_tag_p, create_tag_section, create_tag_form, create_tag_input, create_tag_label, create_tag_input_button } from "./criacoes.js";
+import { create_tag_div, create_tag_h3, create_tag_p, create_tag_section, create_tag_form, create_tag_input_check, create_tag_label, create_tag_input_button } from "./criacoes.js";
 import { Bnc } from "../back/bnc.js";
 
 
@@ -9,7 +9,6 @@ export function vz_notes(){
     const section = create_tag_section("blc_nts");
     // ______________________________________________ 
     const dados = new Bnc().carregar_dados();
-    const le_qtdd = dados.length
     
     for (let dado of dados){
         const div = create_tag_div();
@@ -29,20 +28,20 @@ export function vz_notes_form(){
     const form = create_tag_form("nt_excl");
     // ______________________________________________ 
     const dados = new Bnc().carregar_dados();
-    const le_qtdd = dados.length
+    
     
     for (let dado of dados){
-        
-        const input = create_tag_input(dado);
-        // console.log(input)
+        const input = create_tag_input_check(dados.indexOf(dado), dado);
         const lab = create_tag_label(dado);
+        
+        
         form.appendChild(input);
         form.appendChild(lab);
 
        
     }
-    form.appendChild(create_tag_input_button("w3646", "excluir", true))
-    form.appendChild(create_tag_input_button("w243r", "editar"))
+    form.appendChild(create_tag_input_button("w3646", "excluir", ))
+    form.appendChild(create_tag_input_button("w243r", "editar", true))
     section.appendChild(form)
     return section
 }
@@ -75,7 +74,10 @@ export function retirada(esse){
 }
 
 export function edit(dados){
-    const editar = JSON.parse(dados);
+    console.log(dados)
+    const tv = new Bnc().remove_data(dados.vl_ide)
+
+    const editar = JSON.parse(dados.vlr);
     sessionStorage.setItem("nt_edit", JSON.stringify(editar))
     return "ok"
 }
