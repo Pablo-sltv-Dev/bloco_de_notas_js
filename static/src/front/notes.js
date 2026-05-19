@@ -41,7 +41,7 @@ export function vz_notes_form(){
 
        
     }
-    form.appendChild(create_tag_input_button("w3646", "excluir"))
+    form.appendChild(create_tag_input_button("w3646", "excluir", true))
     form.appendChild(create_tag_input_button("w243r", "editar"))
     section.appendChild(form)
     return section

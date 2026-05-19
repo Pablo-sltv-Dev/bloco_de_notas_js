@@ -62,7 +62,7 @@ export function create_tag_input(vl){
 
 export function create_tag_textarea(ide, txt){
     const tag = document.createElement("textarea")
-    tag.ide = String(ide)
+    tag.id = String(ide)
     tag.placeholder = "exemplo"
     if (txt !== undefined){
         tag.value = txt
@@ -72,8 +72,8 @@ export function create_tag_textarea(ide, txt){
 
 export function create_tag_input_txt(ide, txt){
     const tag = document.createElement("input");
+    tag.id = String(ide)
     tag.type = "text";
-    tag.ide = String(ide)
     tag.placeholder = "exemplo"
     if (txt !== undefined){
         tag.value = txt
@@ -90,7 +90,7 @@ export function create_tag_label(dados){
 
     return label
 }
-export function create_tag_input_button(id_ ,txt){
+export function create_tag_input_button(id_ ,txt, activated){
     const button = document.createElement("input")
     button.type="submit";
     if(id_ !== undefined){
@@ -98,5 +98,9 @@ export function create_tag_input_button(id_ ,txt){
 
     }
     button.value = String(txt);
+    if (activated === undefined){
+        button.disabled = true;
+    }
+
     return button;
 }
